@@ -1,0 +1,25 @@
+.CustomButton{
+    background-image:linear-gradient(to right,#b24b23, #db744c); 
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 60%;
+    font-weight: 900;
+    font-size: 28px;
+    border: 3px solid #D73F09;
+    margin: 5px;
+    vertical-align: middle;
+    padding: 2px;
+    background-clip: content-box;
+    width: 285px;
+    height: 82px;
+    border-radius: 11px;
+}
+
+.Dots{
+    font-size: 40px;
+}
+
+.CustomButton:hover{
+    cursor: pointer;
+}
+
