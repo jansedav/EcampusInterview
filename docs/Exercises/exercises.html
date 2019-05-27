@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="distance.css">
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="distance.js"></script>
+    <script type="text/javascript" src="sort.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <h1>Exercise A:</h1>
     <script type="text/javascript" >
     var json =[{
         "city":"Seattle",
@@ -48,10 +51,13 @@
     }
 
        var i;
+       //Creating a table.
        var x = document.createElement("TABLE");
         x.setAttribute("id", "myTable");
         document.body.appendChild(x);
 
+
+        //Adding in the Headings for each table column.
         var y  = document.createElement("TR");
             y.setAttribute("id", "head");
             document.getElementById("myTable").appendChild(y);
@@ -72,10 +78,12 @@
             z.appendChild(t);
             document.getElementById("head").appendChild(z);
 
+            //Looping through the JSON data and filling out the table rows with it.
         for(i=0; i<json.length; i++){
             var y  = document.createElement("TR");
             y.setAttribute("id", i);
             document.getElementById("myTable").appendChild(y);
+
             var z = document.createElement("TD");
             var t = document.createTextNode(json[i].city);
             z.appendChild(t);
@@ -91,11 +99,21 @@
             z.appendChild(t);
             document.getElementById(i).appendChild(z);
 
+            //Filling out the Distance from Oregon State column, this is using the supplied distance function.
             var z = document.createElement("TD");
-            var t = document.createTextNode(distance(json[i].lat, json[i].lng, oregonstate.lat, oregonstate.lng));
+            var t = document.createTextNode(Math.round(distance(json[i].lat, json[i].lng, oregonstate.lat, oregonstate.lng) * 100)/100);
             z.appendChild(t);
             document.getElementById(i).appendChild(z);
         }
+
+
     </script>
+
+<br/>
+    <button onclick="sort('Ascending')">Ascending</button>
+    <button onclick="sort('Descending')">Descending</button>
+
+    <h1>Exercise B:</h1>
+    <button class="CustomButton"><span class='Dots'>&#9679;</span> &nbsp;&nbsp;&nbsp;BUTTON&nbsp;&nbsp;&nbsp; <span class='Dots'>&#9679;</span></button>
 </body>
 </html>
