@@ -13,8 +13,8 @@ let url = 'https://jansedav.github.io/EcampusInterview/cities.json';
 
 fetch(url)
 .then(res => res.json())
-.then((out) => {
-  console.log('Checkout this JSON! ', out);
+.then((data) => {
+  displayData(data)
 })
 .catch(err => { throw err });
 
@@ -22,7 +22,7 @@ fetch(url)
         "lat": "44.5638",
         "lng": "123.2794"
     }
-
+function displayData(json){
        var i;
        //Creating a table.
        var x = document.createElement("TABLE");
@@ -78,7 +78,7 @@ fetch(url)
             z.appendChild(t);
             document.getElementById(i).appendChild(z);
         }
-
+}
 
     </script>
 
